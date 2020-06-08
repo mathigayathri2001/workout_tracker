@@ -20,6 +20,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
 
+app.use(require('./routes/html-routes.js'))
+
 
 // Start listening for HTTP requests
 const PORT = process.env.PORT || 3000
