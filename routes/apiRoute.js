@@ -15,10 +15,6 @@ router.get("/api/workouts", (req, res) => {
 
 
   router.post('/api/workouts', (req, res, next) => {
-  // const newWorkout = new db.Workout({
-  //     day: Date.now(),
-  //     exercises: [],
-  //   });
     const newWorkout = new db.Workout(req.body);
     newWorkout
       .save()
