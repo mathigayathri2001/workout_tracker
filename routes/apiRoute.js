@@ -10,14 +10,12 @@ router.get("/api/workouts", (req, res,next) => {
       
   });
 
-
   router.post('/api/workouts', (req, res, next) => {
-    const newWorkout = new db.Workout(req.body);
-    newWorkout
-      .save()
+    db.Workout.create(req.body)
       .then(dbWorkout => res.status(201).json(dbWorkout))
       .catch(next)
   })
+  
   
   router.put("/api/workouts/:id", (req, res,next) => {
     const exercise = new db.Exercise(req.body);
@@ -36,8 +34,8 @@ router.get("/api/workouts", (req, res,next) => {
     .then(dbWorkout => res.status(201).json(dbWorkout))
       .catch(next)
       
-  });
-  
+   });
+
   router.get("/api/workouts/range", (req, res,next) => {
     db.Workout.find({})
       
