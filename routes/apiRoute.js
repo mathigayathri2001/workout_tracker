@@ -2,15 +2,12 @@ const router = require("express").Router();
 const db = require("../models");
 
 
-router.get("/api/workouts", (req, res) => {
+router.get("/api/workouts", (req, res,next) => {
     db.Workout.find({})
     .populate("exercises")
-      .then((dbWorkout) => {
-        res.json(dbWorkout);
-      })
-      .catch((err) => {
-        res.status(400).json(err);
-      });
+    .then(dbWorkout => res.status(201).json(dbWorkout))
+      .catch(next)
+      
   });
 
 
@@ -39,6 +36,14 @@ router.get("/api/workouts", (req, res) => {
     .then(dbWorkout => res.status(201).json(dbWorkout))
       .catch(next)
       
+  });
+  
+  router.get("/api/workouts/range", (req, res,next) => {
+    db.Workout.find({})
+      
+      .populate("exercises")
+      .then(dbWorkout => res.status(201).json(dbWorkout))
+      .catch(next)
   });
 
 
