@@ -20,7 +20,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
 
-app.use(require('./routes/html-routes.js'))
+
+
+
+
+app.use(require('./routes/htmlRoute.js'))
+app.use(require('./routes/apiRoute.js'))
+
+
 
 
 // Start listening for HTTP requests
