@@ -6,8 +6,7 @@ router.get("/api/workouts", (req, res,next) => {
     db.Workout.find({})
     .populate("exercises")
     .then(dbWorkout => res.status(201).json(dbWorkout))
-      .catch(next)
-      
+      .catch(next)     
   });
 
   router.post('/api/workouts', (req, res, next) => {
@@ -22,15 +21,10 @@ router.get("/api/workouts", (req, res,next) => {
     exercise.save();
   
     db.Workout.findOneAndUpdate(
-      {
-        _id: req.params.id,
-      },
-      {
-        $push: {
-          exercises: exercise._id,
-        },
-      }
+      {_id: req.params.id,},  
+      { $push: {exercises: exercise._id },}
     )
+   
     .then(dbWorkout => res.status(201).json(dbWorkout))
       .catch(next)
       
