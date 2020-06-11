@@ -72,4 +72,4 @@ https://github.com/mathigayathri2001
 
   <img src= "https://avatars1.githubusercontent.com/u/60233461?v=4" alt = "profile picture" width = "200"/>
 
-  ![Website](https://img.shields.io/website?down_color=grey&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fmathigayathri2001.github.io%2Fportfolio_2%2F)
+ 
