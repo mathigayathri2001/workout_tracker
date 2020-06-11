@@ -1,7 +1,7 @@
 # workout_tracker# 
 
 ### Deployed Heroku URL:
-
+https://afternoon-sierra-83671.herokuapp.com/?id=5ee182f521fa5600176193ee
 
 
 ## Badges
@@ -53,7 +53,7 @@ This application allows the user to create and track their workouts. They can ke
 
 
 ## Visuals
-![](Demo/SpamnumTracker.gif)
+![](Demo/demo.gif)
 
 ## Installation
 Run npm install to install all dependencies. To use the application locally run server.js
