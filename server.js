@@ -1,35 +1,31 @@
-const express = require('express')
-const logger = require('morgan')
-const mongoose = require('mongoose')
-const db = require('./models')
+const express = require("express");
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const db = require("./models");
 
 // Open the database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
-})
+  useCreateIndex: true,
+});
 
 // Create the Express app
-const app = express()
+const app = express();
 
 // Assign Express global middleware
-app.use(logger('dev'))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-app.use(express.static('public'))
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-
-
-
-
-app.use(require('./routes/htmlRoute.js'))
-app.use(require('./routes/apiRoute.js'))
-
-
-
+// Routes
+app.use(require("./routes/htmlRoute.js"));
+app.use(require("./routes/apiRoute.js"));
 
 // Start listening for HTTP requests
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => console.log(`App listening on http://localhost:${PORT}`))
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>
+  console.log(`App listening on http://localhost:${PORT}`)
+);
