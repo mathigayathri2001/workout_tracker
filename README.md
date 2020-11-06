@@ -1,7 +1,7 @@
 # workout_tracker
 
 ### Deployed Heroku URL:
-https://afternoon-sierra-83671.herokuapp.com/
+https://fitnesstracker1981.herokuapp.com/
 
 
 ## Badges
